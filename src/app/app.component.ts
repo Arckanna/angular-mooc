@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  template: `@if(isServerRunning){
+   <span>Yes, the server is running</span>
+  }   @else{
+  <span>No, the server is not running</span>
+  }
+  `,
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-mooc';
+  isServerRunning = true;
 }
